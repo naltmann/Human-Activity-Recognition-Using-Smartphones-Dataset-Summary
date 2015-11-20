@@ -1,70 +1,54 @@
-The value for each field is the mean of all readings from the source data for that subject and activity.
+## Project Description
+This project consolidates and summarizes (averages) the data originally collected in the [Human Activity Recognition Using Smartphones Data Set](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
-1 activity
-2 subject
-3 tBodyAcc.mean.X
-4 tBodyAcc.mean.Y
-5 tBodyAcc.mean.Z
-6 tBodyAcc.std.X
-7 tBodyAcc.std.Y
-8 tBodyAcc.std.Z
-9 tGravityAcc.mean.X
-10 tGravityAcc.mean.Y
-11 tGravityAcc.mean.Z
-12 tGravityAcc.std.X
-13 tGravityAcc.std.Y
-14 tGravityAcc.std.Z
-15 tBodyAccJerk.mean.X
-16 tBodyAccJerk.mean.Y
-17 tBodyAccJerk.mean.Z
-18 tBodyAccJerk.std.X
-19 tBodyAccJerk.std.Y
-20 tBodyAccJerk.std.Z
-21 tBodyGyro.mean.X
-22 tBodyGyro.mean.Y
-23 tBodyGyro.mean.Z
-24 tBodyGyro.std.X
-25 tBodyGyro.std.Y
-26 tBodyGyro.std.Z
-27 tBodyGyroJerk.mean.X
-28 tBodyGyroJerk.mean.Y
-29 tBodyGyroJerk.mean.Z
-30 tBodyGyroJerk.std.X
-31 tBodyGyroJerk.std.Y
-32 tBodyGyroJerk.std.Z
-33 tBodyAccMag.mean
-34 tBodyAccMag.std
-35 tGravityAccMag.mean
-36 tGravityAccMag.std
-37 tBodyAccJerkMag.mean
-38 tBodyAccJerkMag.std
-39 tBodyGyroMag.mean
-40 tBodyGyroMag.std
-41 tBodyGyroJerkMag.mean
-42 tBodyGyroJerkMag.std
-43 fBodyAcc.mean.X
-44 fBodyAcc.mean.Y
-45 fBodyAcc.mean.Z
-46 fBodyAcc.std.X
-47 fBodyAcc.std.Y
-48 fBodyAcc.std.Z
-49 fBodyAccJerk.mean.X
-50 fBodyAccJerk.mean.Y
-51 fBodyAccJerk.mean.Z
-52 fBodyAccJerk.std.X
-53 fBodyAccJerk.std.Y
-54 fBodyAccJerk.std.Z
-55 fBodyGyro.mean.X
-56 fBodyGyro.mean.Y
-57 fBodyGyro.mean.Z
-58 fBodyGyro.std.X
-59 fBodyGyro.std.Y
-60 fBodyGyro.std.Z
-61 fBodyAccMag.mean
-62 fBodyAccMag.std
-63 fBodyAccJerkMag.mean
-64 fBodyAccJerkMag.std
-65 fBodyGyroMag.mean
-66 fBodyGyroMag.std
-67 fBodyGyroJerkMag.mean
-68 fBodyGyroJerkMag.std
+##Study design and data processing
+
+###Collection of the raw data
+The compressed data is downloaded from the [Human Activity Recognition Using Smartphones Data Set](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) page. Detailed information about how the data for that data set was collected is available on that page.
+
+###Notes on the original (raw) data 
+The original data set stores the data in a number of separate files that are combined by this project.
+
+##Creating the tidy datafile
+
+###Guide to create the tidy data file
+Run run_analysis.R to create the tidy data file. run_analysis.R requires a number of R packages you may need to install.
+
+###Cleaning of the data
+This run_analysis.R code combines data from a number of separate files in the source data and creates a single output file that averages all of the mean and standard deviation data for each measurement by activity and test subject.
+
+##Description of the variables in the activity_subject_averages.txt
+
+activity - Text description of each activity the subject was performing when the measurements were taken. Example: LAYING, SITTING, STANDING, ...
+subject - Unique numeric ID given to each subject
+
+Measurement variables:
+
+Measurement variables all follow a set naming convention.
+
+Example:
+For "tBodyAcc.mean.X"
+"t" indicates this is time domain signal captured at a constant rate of 50 Hz. "f" indicates frequency domain signals.
+"BodyAcc" is the type of measurement as described in the source data
+"mean" indicates the data is the average or "std" the standard deviation
+"X" represents the axis along which the data was recorded. Other values are "Y" or "Z"
+
+Measurements anre in units of gravity or radians/second for angular acceleration.
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
