@@ -19,7 +19,7 @@ Run run_analysis.R
 
 Running the run_analysis.R file performs a number of operations:
 
-Downloads and extracts data from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+# Downloads and extracts data from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 Merges the training and the test sets to create one data set.
 Extracts only the measurements on the mean and standard deviation for each measurement. 
 Uses descriptive activity names to name the activities in the data set
